@@ -2,29 +2,41 @@ using UnityEngine;
 
 public class FinishDetector : MonoBehaviour
 {
-    // Fungsi ini otomatis jalan saat ada objek masuk ke area Trigger
+    public GameTimer timerScript; 
+
     private void OnTriggerEnter(Collider other)
     {
-        // Cek apakah yang masuk punya script BallController (P1)
+        // Deteksi Player 1
         if (other.GetComponent<BallController>() != null)
         {
-            other.GetComponent<BallController>().canMove = false;
-            Debug.Log("Player 1 Finish!");
+            BallController p1 = other.GetComponent<BallController>();
+            if (p1.canMove)
+            {
+                p1.canMove = false;
+                timerScript.P1Finish();
+                FreezeBola(other.GetComponent<Rigidbody>());
+            }
         }
 
-        // Cek apakah yang masuk punya script BallControllerP2 (P2)
+        // Deteksi Player 2
         if (other.GetComponent<BallControllerP2>() != null)
         {
-            other.GetComponent<BallControllerP2>().canMove = false;
-            Debug.Log("Player 2 Finish!");
+            BallControllerP2 p2 = other.GetComponent<BallControllerP2>();
+            if (p2.canMove)
+            {
+                p2.canMove = false;
+                timerScript.P2Finish();
+                FreezeBola(other.GetComponent<Rigidbody>());
+            }
         }
-        
-        // Opsional: Bikin bola langsung berhenti total (nggak ngglundung lagi)
-        Rigidbody rb = other.GetComponent<Rigidbody>();
+    }
+
+    void FreezeBola(Rigidbody rb)
+    {
         if (rb != null)
         {
             rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            rb.isKinematic = true;
         }
     }
 }
