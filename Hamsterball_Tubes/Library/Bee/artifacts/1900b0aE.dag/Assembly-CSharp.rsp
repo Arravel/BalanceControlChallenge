@@ -375,6 +375,8 @@
 "Assets/Script/SceneController.cs"
 "Assets/Script/ScoreboardManager.cs"
 "Assets/Script/SerialReceiver.cs"
+"Assets/Script/SpinnerObstacle.cs"
+"Assets/Script/SpinnerObstacle1.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
