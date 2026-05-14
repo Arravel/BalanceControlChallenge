@@ -3,6 +3,8 @@ using UnityEngine;
 public class FinishDetector : MonoBehaviour
 {
     public GameTimer timerScript; 
+    public WinPanelManager winPanelManager; // Tambahan untuk deteksi tombol P
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +16,13 @@ public class FinishDetector : MonoBehaviour
             {
                 p1.canMove = false;
                 timerScript.P1Finish();
+                
+                if (winPanelManager != null) {
+                    winPanelManager.PlayerReachedFinish(1); // Kasih tau P1 udah masuk
+                } else {
+                    Debug.LogError("WinPanelManager BELUM DIMASUKKAN ke dalam FinishDetector!");
+                }
+                
                 FreezeBola(other.GetComponent<Rigidbody>());
             }
         }
@@ -26,6 +35,13 @@ public class FinishDetector : MonoBehaviour
             {
                 p2.canMove = false;
                 timerScript.P2Finish();
+
+                if (winPanelManager != null) {
+                    winPanelManager.PlayerReachedFinish(2); // Kasih tau P2 udah masuk
+                } else {
+                    Debug.LogError("WinPanelManager BELUM DIMASUKKAN ke dalam FinishDetector!");
+                }
+
                 FreezeBola(other.GetComponent<Rigidbody>());
             }
         }

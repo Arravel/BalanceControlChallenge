@@ -31,7 +31,11 @@ public class GameTimer : MonoBehaviour
         {
             p1Done = true;
             string finalTime = FormatTime(currentTime);
-            timerP1Text.text = "P1: " + finalTime;
+            if (timerP1Text != null) {
+                timerP1Text.text = "P1: " + finalTime;
+            } else {
+                Debug.LogWarning("timerP1Text belum dipasang di Inspector GameTimer!");
+            }
             
             // SIMPAN WAKTU P1 UNTUK SCOREBOARD
             PlayerPrefs.SetString("WaktuP1", finalTime);
@@ -48,7 +52,11 @@ public class GameTimer : MonoBehaviour
         {
             p2Done = true;
             string finalTime = FormatTime(currentTime);
-            timerP2Text.text = "P2: " + finalTime;
+            if (timerP2Text != null) {
+                timerP2Text.text = "P2: " + finalTime;
+            } else {
+                Debug.LogWarning("timerP2Text belum dipasang di Inspector GameTimer!");
+            }
 
             // SIMPAN WAKTU P2 UNTUK SCOREBOARD
             PlayerPrefs.SetString("WaktuP2", finalTime);

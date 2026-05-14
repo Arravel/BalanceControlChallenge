@@ -88,6 +88,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\Script\PauseMenuManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\Script\Ardity\Scripts\Samples\SampleUserPolling_JustRead.cs" />
     <Compile Include="Assets\Script\MainMenuController.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\Script\WinPanelManager.cs" />
     <Compile Include="Assets\Script\Ardity\Scripts\Samples\SampleCustomDelimiter.cs" />
     <Compile Include="Assets\Script\BallControllerP2.cs" />
     <Compile Include="Assets\Script\Ardity\Scripts\Samples\SampleMessageListener.cs" />
